@@ -1,0 +1,188 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const features = [
+  {
+    icon: 'fas fa-dumbbell',
+    title: 'Expert-Led Training Programs',
+    text: 'Personalized sessions with certified coaches focusing on dribbling, shooting, defense, and conditioning.'
+  },
+  {
+    icon: 'fas fa-chart-line',
+    title: 'Performance Analytics',
+    text: 'Utilize state-of-the-art tools to track progress and optimize your technique.'
+  },
+  {
+    icon: 'fas fa-users',
+    title: 'Community Events',
+    text: 'Join pickup games, workshops, and motivational seminars in our warm, inviting space.'
+  }
+];
+
+const pageTitle = "Welcome to HoopsHaven Central";
+const pageDescription = "Discover the ultimate destination for basketball enthusiasts seeking top-tier training, performance enhancement, and community-driven resources in an elegant rustic setting.";
+
+const testimonials = [
+  {
+    quote: 'HoopsHaven transformed my game with personalized coaching and community support.',
+    author: 'Marcus Johnson',
+    role: 'Senior Player'
+  },
+  {
+    quote: 'The analytics tools helped me identify weaknesses I never knew existed.',
+    author: 'Sarah Williams',
+    role: 'Coaching Assistant'
+  },
+  {
+    quote: 'A true sanctuary for basketball enthusiasts. The atmosphere is unmatched.',
+    author: 'David Chen',
+    role: 'Seasoned Coach'
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <div class="relative bg-gradient-to-br from-[#0d4730] to-[#1a6c4a] py-24 md:py-32 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+CiAgPHBhdGggZD0iTTAgMGg2MHY2MEgweiIgZmlsbD0ibm9uZSIvPgogIDxwYXRoIGQ9Ik0zMCAzMGMtMTYuNiAwLTMwIDEzLjQtMzAgMzBzMTMuNCAzMC AzMCAzMDAzMC0xMy40IDMwLTMwLTEzLjQtMzAtMzAtMzB6IiBmaWxsPSIjZmY2YjZiIiBvcGFjaXR5PSIwLjEiLz4KPC9zdmc+')]"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6 tracking-tight">Welcome to HoopsHaven Central</h1>
+        <p class="text-xl md:text-2xl text-[#f0f0f0] mb-10 font-light italic">Your Central Hub for Basketball Training and Performance</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="/programs" class="px-8 py-4 bg-[#ff6b6b] hover:bg-[#ff5252] text-white font-semibold rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-lg">
+            Explore Programs
+          </a>
+          <a href="/contact" class="px-8 py-4 bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#0d4730] font-semibold rounded-lg transition-all duration-300">
+            Join Our Community
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Why Choose Section -->
+  <section class="py-20 bg-[#f9f5f0]">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-[#0d4730] mb-4">Why Choose HoopsHaven?</h2>
+        <div class="w-24 h-1 bg-[#ff6b6b] mx-auto"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {features.map((feature, index) => (
+          <div key={index} class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2 border-t-4 border-[#ff6b6b]">
+            <div class="text-5xl text-[#0d4730] mb-6">
+              <i class={feature.icon}></i>
+            </div>
+            <h3 class="text-2xl font-serif font-semibold text-[#0d4730] mb-4">{feature.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{feature.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-20 bg-[#0d4730] text-white">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row items-center gap-12">
+        <div class="lg:w-1/2">
+          <div class="relative">
+            <div class="bg-[#ff6b6b] opacity-20 rounded-xl w-full h-96"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#0d4730] to-[#1a6c4a] rounded-xl flex items-center justify-center">
+              <div class="text-center p-8">
+                <div class="text-6xl mb-4">🏀</div>
+                <h3 class="text-2xl font-serif font-bold mb-2">Elegant Rustic Training Grounds</h3>
+                <p class="text-[#f0f0f0]">Where tradition meets modern basketball excellence</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="lg:w-1/2">
+          <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6">Step Into a World Where Passion Meets Precision</h2>
+          <p class="text-lg mb-6 text-[#e0e0e0] leading-relaxed">
+            At HoopsHaven Central, we blend the timeless allure of rustic elegance with cutting-edge basketball expertise. 
+            Whether you're a budding athlete, a seasoned player, or a coach looking to refine your skills, 
+            our sanctuary offers everything you need to elevate your game.
+          </p>
+          <p class="text-lg mb-8 text-[#e0e0e0] leading-relaxed">
+            Our carefully curated environment fosters growth, community, and athletic excellence. 
+            Experience the perfect fusion of traditional craftsmanship and contemporary training methods.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <div class="bg-[#ff6b6b] text-white px-6 py-3 rounded-lg font-semibold">Certified Coaches</div>
+            <div class="bg-[#ff6b6b] text-white px-6 py-3 rounded-lg font-semibold">State-of-the-Art Facilities</div>
+            <div class="bg-[#ff6b6b] text-white px-6 py-3 rounded-lg font-semibold">Community Focused</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-20 bg-[#f9f5f0]">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-[#0d4730] mb-4">What Our Community Says</h2>
+        <div class="w-24 h-1 bg-[#ff6b6b] mx-auto"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {testimonials.map((testimonial, index) => (
+          <div key={index} class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-[#ff6b6b]">
+            <div class="text-yellow-400 text-3xl mb-4">❝</div>
+            <p class="text-gray-700 mb-6 italic">"{testimonial.quote}"</p>
+            <div>
+              <h4 class="font-bold text-[#0d4730]">{testimonial.author}</h4>
+              <p class="text-[#6b7280] text-sm">{testimonial.role}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-[#0d4730] to-[#1a6c4a] text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6">Ready to Elevate Your Game?</h2>
+      <p class="text-xl mb-10 max-w-2xl mx-auto text-[#e0f0e8]">
+        Join our community of passionate basketball enthusiasts and discover your next level of performance.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="/register" class="px-8 py-4 bg-[#ff6b6b] hover:bg-[#ff5252] text-white font-semibold rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-lg">
+          Start Your Journey
+        </a>
+        <a href="/events" class="px-8 py-4 bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#0d4730] font-semibold rounded-lg transition-all duration-300">
+          Upcoming Events
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap');
+  
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f9f5f0;
+  }
+  
+  .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .text-primary {
+    color: #0d4730;
+  }
+  
+  .text-accent {
+    color: #ff6b6b;
+  }
+</style>

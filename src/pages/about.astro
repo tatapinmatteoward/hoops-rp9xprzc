@@ -1,0 +1,193 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "About HoopsHaven Central";
+const pageDescription = "Discover the story behind HoopsHaven Central, your premier destination for basketball training and performance enhancement, blending elegant rustic charm with expert coaching.";
+
+const missionPoints = [
+  "Empower athletes to reach their peak potential",
+  "Create a community of passionate basketball lovers",
+  "Blend traditional wisdom with modern training methods",
+  "Foster personal growth alongside athletic excellence"
+];
+
+const values = [
+  {
+    icon: "fas fa-tree",
+    title: "Rooted in Nature",
+    description: "Inspired by the tranquil beauty of woodland settings"
+  },
+  {
+    icon: "fas fa-hand-holding-heart",
+    title: "Compassionate Coaching",
+    description: "Dedicated to nurturing each player's unique journey"
+  },
+  {
+    icon: "fas fa-users",
+    title: "Community Focused",
+    description: "Building connections that extend beyond the court"
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <div class="relative bg-gradient-to-br from-[#0d4730] to-[#1a6d4a] py-24 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-10 left-10 w-32 h-32 rounded-full bg-[#ff6b6b]"></div>
+      <div class="absolute bottom-20 right-20 w-24 h-24 rounded-full bg-[#ff6b6b]"></div>
+      <div class="absolute top-1/3 right-1/4 w-16 h-16 rounded-full bg-[#ff6b6b]"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10 text-center">
+      <h1 class="text-5xl md:text-7xl font-serif font-bold text-white mb-6 tracking-wide">About HoopsHaven Central</h1>
+      <div class="max-w-3xl mx-auto">
+        <p class="text-xl md:text-2xl text-[#f0f9f5] font-serif italic mb-8 leading-relaxed">
+          Your Central Hub for Basketball Training and Performance
+        </p>
+        <div class="w-24 h-1 bg-[#ff6b6b] mx-auto mb-8"></div>
+        <p class="text-lg text-[#e0f0eb] max-w-2xl mx-auto">
+          Discover the story behind our elegant rustic haven where basketball passion meets timeless craftsmanship
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Story Section -->
+  <section class="py-20 bg-[#f8fbfa]">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row items-center gap-12">
+        <div class="lg:w-1/2">
+          <div class="relative">
+            <div class="absolute -top-6 -left-6 w-full h-full border-4 border-[#0d4730] z-0"></div>
+            <div class="relative z-10 bg-white p-8 shadow-xl">
+              <div class="aspect-video bg-gradient-to-br from-[#0d4730] to-[#1a6d4a] rounded-lg flex items-center justify-center">
+                <i class="fas fa-basketball-ball text-8xl text-[#ff6b6b]"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="lg:w-1/2">
+          <h2 class="text-4xl font-serif font-bold text-[#0d4730] mb-6">Our Story</h2>
+          <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+            Nestled in the heart of basketball passion, <strong>HoopsHaven Central</strong> is your central hub for basketball training and performance. 
+          </p>
+          <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+            Founded by a team of dedicated basketball enthusiasts and certified trainers, HoopsHaven Central began as a simple vision: to create a welcoming space where players of all levels could hone their skills in an inspiring environment.
+          </p>
+          <p class="text-lg text-gray-700 leading-relaxed">
+            Drawing from the rustic elegance of nature—think warm wooden courts under open skies—we've built a community that feels like home while pushing the boundaries of athletic excellence.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="py-20 bg-gradient-to-r from-[#0d4730] to-[#1a6d4a] text-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-serif font-bold mb-4">Our Mission</h2>
+        <div class="w-24 h-1 bg-[#ff6b6b] mx-auto"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {missionPoints.map((point, index) => (
+          <div class="bg-white bg-opacity-10 backdrop-blur-sm p-6 rounded-xl border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300">
+            <div class="text-3xl mb-4 text-[#ff6b6b]">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <h3 class="text-xl font-serif font-semibold mb-3">{point}</h3>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="py-20 bg-[#f0f9f5]">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-serif font-bold text-[#0d4730] mb-4">Our Core Values</h2>
+        <div class="w-24 h-1 bg-[#ff6b6b] mx-auto"></div>
+        <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
+          What drives our approach to basketball training and community building
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        {values.map((value) => (
+          <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-[#0d4730] border-opacity-10">
+            <div class="text-5xl text-[#0d4730] mb-6">
+              <i class={value.icon}></i>
+            </div>
+            <h3 class="text-2xl font-serif font-semibold text-[#0d4730] mb-4">{value.title}</h3>
+            <p class="text-gray-700 leading-relaxed">{value.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Section -->
+  <section class="py-20 bg-[#0d4730] text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="text-6xl mb-6">
+          <i class="fas fa-quote-left text-[#ff6b6b]"></i>
+        </div>
+        <blockquote class="text-2xl md:text-3xl font-serif italic mb-8 leading-relaxed">
+          "We believe that every player has the potential to shine when given the right environment, guidance, and support. At HoopsHaven Central, we're committed to nurturing that potential in every athlete who walks through our doors."
+        </blockquote>
+        <div class="text-xl font-semibold">- Team HoopsHaven Central</div>
+        <div class="w-24 h-1 bg-[#ff6b6b] mx-auto mt-4"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision Section -->
+  <section class="py-20 bg-[#f8fbfa]">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-serif font-bold text-[#0d4730] text-center mb-12">Our Vision</h2>
+        
+        <div class="flex flex-col md:flex-row gap-12 items-center">
+          <div class="md:w-1/2">
+            <div class="aspect-video bg-gradient-to-br from-[#1a6d4a] to-[#0d4730] rounded-lg flex items-center justify-center">
+              <i class="fas fa-leaf text-8xl text-[#ff6b6b]"></i>
+            </div>
+          </div>
+          
+          <div class="md:w-1/2">
+            <h3 class="text-3xl font-serif font-semibold text-[#0d4730] mb-6">A Legacy of Excellence</h3>
+            <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+              We envision HoopsHaven Central as a beacon of inspiration in basketball communities. Our goal is to create a lasting impact that extends far beyond the court, shaping confident individuals who carry the values of teamwork, discipline, and respect into all aspects of life.
+            </p>
+            <p class="text-lg text-gray-700 leading-relaxed">
+              Through continuous innovation while honoring tradition, we aim to build a legacy where every player finds not just improvement in their game, but also in themselves.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-[#ff6b6b] to-[#d32f2f] text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-4xl md:text-5xl font-serif font-bold mb-6">Join Our Community Today</h2>
+      <p class="text-xl max-w-2xl mx-auto mb-10">
+        Experience the perfect blend of traditional wisdom and modern training approaches
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="/contact" class="px-8 py-4 bg-white text-[#0d4730] font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-300">
+          Schedule a Visit
+        </a>
+        <a href="/programs" class="px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[#0d4730] transition-colors duration-300">
+          Explore Programs
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
